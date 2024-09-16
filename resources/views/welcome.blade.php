@@ -44,7 +44,7 @@
                     <img src="/images/cover-book-1.jpg" class="img-fluid rounded-book shadow d-block d-md-none" alt="" style="max-height: 350px; height: 100%; width: auto;">
                 </div>
             </div>
-            <img src="/images/pages-book-1.png" alt="" class="img-fluid">
+            <img src="/images/pages-book-1.jpg" alt="" class="img-fluid">
         </div>
 {{--        <div id="book-1" class="my-5 py-5">--}}
 {{--            <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 d-flex align-items-center justify-content-center">--}}
@@ -81,7 +81,7 @@
                     <img src="/images/cover-book-2.jpg" class="img-fluid rounded-book shadow d-block d-md-none" alt="" style="max-height: 350px; height: 100%; width: auto;">
                 </div>
             </div>
-            <img src="/images/pages-book-2.png" alt="" class="img-fluid">
+            <img src="/images/pages-book-2.jpg" alt="" class="img-fluid">
         </div>
         <div id="book-3" class="my-5 py-5">
             <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-lg-2 d-flex align-items-center justify-content-center">
@@ -99,7 +99,7 @@
                     <img src="/images/cover-book-3.jpg" class="img-fluid rounded-book shadow d-block d-md-none" alt="" style="max-height: 350px; height: 100%; width: auto;">
                 </div>
             </div>
-            <img src="/images/pages-book-3.png" alt="" class="img-fluid">
+            <img src="/images/pages-book-3.jpg" alt="" class="img-fluid">
         </div>
 {{--        <div id="cta" class="my-5 py-5">--}}
 {{--            <div class="shadow p-5" style="border-right: 20px solid #10C1EA; border-bottom: 20px solid #10C1EA">--}}
