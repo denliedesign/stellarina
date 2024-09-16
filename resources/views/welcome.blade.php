@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="my-2 d-flex justify-content-center">
-                    <img src="/images/cover-book-1.jpg" class="img-fluid rounded-book shadow" alt="" style="height: 550px; width: auto; transform: rotate(5deg);">
+                    <img src="/images/cover-book-1.jpg" class="img-fluid rounded-book shadow" alt="" style="max-height: 550px; height: 100%; width: auto; transform: rotate(5deg);">
                 </div>
             </div>
             <img src="/images/pages-book-1.png" alt="" class="img-fluid">
@@ -59,7 +59,7 @@
 {{--                </div>--}}
 {{--                </div>--}}
 {{--                <div class="my-2 d-flex justify-content-center">--}}
-{{--                    <img src="/images/cover-book-1.jpg" class="img-fluid rounded-book shadow" alt="" style="height: 550px; width: auto; transform: rotate(5deg);">--}}
+{{--                    <img src="/images/cover-book-1.jpg" class="img-fluid rounded-book shadow" alt="" style="max-height: 550px; height: 100%; width: auto; transform: rotate(5deg);">--}}
 {{--                </div>--}}
 {{--            </div>--}}
 {{--            <img src="/images/pages-book-1.png" alt="" class="img-fluid">--}}
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 <div class="my-2 d-flex justify-content-center">
-                    <img src="/images/cover-book-2.jpg" class="img-fluid rounded-book shadow" alt="" style="height: 550px; width: auto; transform: rotate(5deg);">
+                    <img src="/images/cover-book-2.jpg" class="img-fluid rounded-book shadow" alt="" style="max-height: 550px; height: 100%; width: auto; transform: rotate(5deg);">
                 </div>
             </div>
             <img src="/images/pages-book-2.png" alt="" class="img-fluid">
@@ -93,7 +93,7 @@
                     </div>
                 </div>
                 <div class="my-2 d-flex justify-content-center">
-                    <img src="/images/cover-book-3.jpg" class="img-fluid rounded-book shadow" alt="" style="height: 550px; width: auto; transform: rotate(5deg);">
+                    <img src="/images/cover-book-3.jpg" class="img-fluid rounded-book shadow" alt="" style="max-height: 550px; height: 100%; width: auto; transform: rotate(5deg);">
                 </div>
             </div>
             <img src="/images/pages-book-3.png" alt="" class="img-fluid">
