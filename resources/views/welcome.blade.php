@@ -12,7 +12,7 @@
     </div>
     <div class="container my-5">
         <div class="d-flex justify-content-center">
-            <img src="/images/logo-stellarina.jpeg" alt="stellarina logo" class="img-fluid ms-2" style="height: 200px;">
+            <img src="/images/logo-stellarina.jpeg" alt="stellarina logo" class="img-fluid ms-2" style="max-height: 200px; height: 100%; width: auto;">
         </div>
         <div class="d-flex justify-content-center"><img src="/images/stellarina.png" alt="" class="img-fluid me-4"></div>
         <div id="fold" class="my-5 shadow p-5" style="border-right: 20px solid #AA83BC; border-bottom: 20px solid #AA83BC">

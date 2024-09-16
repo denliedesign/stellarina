@@ -3,15 +3,15 @@
 @section('content')
     <div class="container my-5">
         <div class="d-flex justify-content-center">
-            <img src="/images/logo-stellarina.jpeg" alt="stellarina logo" class="img-fluid ms-2" style="height: 200px;">
+            <img src="/images/logo-stellarina.jpeg" alt="stellarina logo" class="img-fluid ms-2" style="max-height: 200px; height: 100%; width: auto;">
         </div>
         <h1>Your Cart</h1>
         @foreach ($products as $product)
             <div class="my-4 div row">
-                <div class="col-6 col-md-2"><img src="{{ $product['image'] }}" alt="Product Image" class="img-fluid"></div>
-                <div class="col-6 col-md-10">
+                <div class="col-4 col-md-2"><img src="{{ $product['image'] }}" alt="Product Image" class="img-fluid"></div>
+                <div class="col-8 col-md-10">
                     <h5 class="">{{ $product['name'] }}</h5>
-                    <p class="">{{ $product['description'] }}</p>
+                    <p class="d-none d-md-block">{{ $product['description'] }}</p>
                     <p class="">${{ $product['price'] }} {{ $product['currency'] }}</p>
                     <form action="{{ route('cart.remove', $product['cart_id']) }}" method="POST">
                         @csrf
