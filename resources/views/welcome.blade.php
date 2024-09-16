@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
-    <div class="d-flex justify-content-end pe-5" style="position: fixed; width: 100%;">
+    <div class="d-flex justify-content-end pe-5" style="position: fixed; width: 100%; z-index: 3;">
         <div style="position: relative;">
             <a href="/cart" class="text-decoration-none text-blue">
                 <ion-icon name="cart" style="font-size: 3em;"></ion-icon>
@@ -98,20 +98,20 @@
             </div>
             <img src="/images/pages-book-3.png" alt="" class="img-fluid">
         </div>
-        <div id="cta" class="my-5 py-5">
-            <div class="shadow p-5" style="border-right: 20px solid #10C1EA; border-bottom: 20px solid #10C1EA">
-                <h3 class="text-center">Order Your <span style="text-shadow: 4px 4px 2px rgba(255, 167, 165, 0.5);">Stellarina</span> book or series today!</h3>
-                <p class="text-center">
-                    Are you ready to bring the JOY of Stellarina and friends to your students or a child you love? Click below to place your order today!
-                </p>
-                <div class="d-flex justify-content-center">
-                    <a href="/products" style="color: black;">
-                        <div class="btn btn-lg btn-pink shadow">Shop</div>
-                    </a>
-                </div>
+{{--        <div id="cta" class="my-5 py-5">--}}
+{{--            <div class="shadow p-5" style="border-right: 20px solid #10C1EA; border-bottom: 20px solid #10C1EA">--}}
+{{--                <h3 class="text-center">Order Your <span style="text-shadow: 4px 4px 2px rgba(255, 167, 165, 0.5);">Stellarina</span> book or series today!</h3>--}}
+{{--                <p class="text-center">--}}
+{{--                    Are you ready to bring the JOY of Stellarina and friends to your students or a child you love? Click below to place your order today!--}}
+{{--                </p>--}}
+{{--                <div class="d-flex justify-content-center">--}}
+{{--                    <a href="/products" style="color: black;">--}}
+{{--                        <div class="btn btn-lg btn-pink shadow">Shop</div>--}}
+{{--                    </a>--}}
+{{--                </div>--}}
 
-            </div>
-        </div>
+{{--            </div>--}}
+{{--        </div>--}}
         <div id="about" class="my-5 py-5">
             <h3 class="text-center">Meet the <span style="text-shadow: 4px 4px 2px rgba(244, 236, 67, 0.5);">Author</span> and <span style="text-shadow: 4px 4px 2px rgba(170, 131, 188, 0.5);">Illustrator</span></h3>
             <div class="row row-cols-1-row-cols-sm-1 row-cols-md-2 row-cols-lg-2 card-group-md">

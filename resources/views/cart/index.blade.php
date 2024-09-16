@@ -2,6 +2,9 @@
 
 @section('content')
     <div class="container my-5">
+        <div class="d-flex justify-content-center">
+            <img src="/images/logo-stellarina.jpeg" alt="stellarina logo" class="img-fluid ms-2" style="height: 200px;">
+        </div>
         <h1>Your Cart</h1>
         @foreach ($products as $product)
             <div class="my-4 div row">
@@ -29,7 +32,7 @@
 {{--                </form>--}}
 {{--            </div>--}}
 {{--        @endforeach--}}
-        <a href="{{ route('checkout.session') }}" class="btn btn-lg btn-danger me-2">Proceed to Checkout</a>
-        <a href="/" class="btn btn-lg btn-primary mx-2">Back</a>
+        <a href="{{ route('checkout.session') }}" class="btn btn-lg btn-pink me-2 shadow">Proceed to Checkout</a>
+        <a href="/" class="btn btn-lg btn-outline-secondary mx-2">Back</a>
     </div>
 @endsection
