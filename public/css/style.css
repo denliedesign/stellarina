@@ -1,0 +1,41 @@
+.font-poppins, h1, h2, h3, h4, h5, h6 {
+    font-family: "Poppins", sans-serif;
+}
+
+.font-quicksand, p {
+    font-family: "Quicksand", sans-serif;
+}
+
+h1 {font-size: 66px;}
+h3 {font-size: 44px;}
+p {font-size: 22px;}
+
+.text-blue {color: #10C1EA;}
+.text-yellow {color: #F4EC43;}
+.text-pink {color: #FFA7A5;}
+.text-purple {color: #AA83BC;}
+.btn-pink {background: #FFA7A5;}
+.btn-pink:hover {background: #FFB4B1;}
+
+.brand-light-blue {color: #84ccf1;}
+.brand-dark-blue {color: #3574ba;}
+.brand-light-pink {color: #f8aba4;}
+.brand-dark-pink {color: #e85073;}
+.brand-purple {color: #aa7fb8;}
+.brand-yellow {color: #f3ec5d;}
+
+.rounded-book {
+    border-radius: 7px 0 0 7px;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -10px; /* Adjust based on your icon position */
+    right: 0;
+    background-color: #EE2B27;
+    color: white;
+    padding: 5px 8px;
+    border-radius: 10px;
+    display: none;
+}
+
