@@ -22,6 +22,7 @@ p {font-size: 22px;}
 .text-purple {color: #AA83BC;}
 .btn-pink {background: #FFA7A5;}
 .btn-pink:hover {background: #FFB4B1;}
+.btn-yellow {background: #F4EC43;}
 .btn-yellow-outline {border: 2px solid #f3ec5d}
 .btn-yellow-outline:hover {background: #f3ec5d}
 

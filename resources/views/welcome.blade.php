@@ -36,6 +36,8 @@
                         Join Stellarina as she attends her first dance class, meets her first dance teacher, and finds new friends! She’s excited (and a little nervous!), but once she enters the room, she finds dancing with her new friends is even more fun than she imagined. After reading this book, follow Stellarina’s other adventures with her new friends Jazzy Jake, Dancin’ Daisy, and Rescue Reggie!
                     </p>
                     <div class="d-flex justify-content-center">
+                        <!-- Quantity input -->
+                        <input type="number" id="quantity-{{ $bookOne['price_id'] }}" value="1" min="1" class="form-control me-2" style="width: 80px;">
                         <button class="btn btn-lg btn-pink shadow add-to-cart" data-price-id="{{ $bookOne['price_id'] }}">Add to Cart</button>
                     </div>
                 </div>
@@ -73,6 +75,8 @@
                         Join Stellarina as she gets ready for her weekly dance class. She’s excited to get to the studio, but when she looks for her dance shoes, they are nowhere to be found! Follow along as she searches for her dance shoes and learns about caring for her belongings with the help of her friends. After reading this book, follow Stellarina’s other adventures with her new friends Jazzy Jake, Dancin’ Daisy, and Rescue Reggie!
                     </p>
                     <div class="d-flex justify-content-center">
+                        <!-- Quantity input -->
+                        <input type="number" id="quantity-{{ $bookTwo['price_id'] }}" value="1" min="1" class="form-control me-2" style="width: 80px;">
                         <button class="btn btn-lg btn-pink shadow add-to-cart" data-price-id="{{ $bookTwo['price_id'] }}">Add to Cart</button>
                     </div>
                 </div>
@@ -91,6 +95,8 @@
                         Join Stellarina as she prepares for her first recital and learns about courage. She’s excited to try on her costume and go to the theatre, but she becomes nervous when she sees the stage! Follow along as she learns about doing her best and being brave with the help of her teacher and friends. After reading this book, follow Stellarina’s other adventures with her new friends Jazzy Jake, Dancin’ Daisy, and Rescue Reggie!
                     </p>
                     <div class="d-flex justify-content-center">
+                        <!-- Quantity input -->
+                        <input type="number" id="quantity-{{ $bookThree['price_id'] }}" value="1" min="1" class="form-control me-2" style="width: 80px;">
                         <button class="btn btn-lg btn-pink shadow add-to-cart" data-price-id="{{ $bookThree['price_id'] }}">Add to Cart</button>
                     </div>
                 </div>
@@ -160,28 +166,45 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     $(document).ready(function() {
-        // $('.add-to-cart').on('click', function() {
         $('body').on('click', '.add-to-cart', function() {
             var priceId = $(this).data('price-id');
+            var quantity = parseInt($('#quantity-' + priceId).val()); // Ensure you parse the quantity as an integer
+
             $.ajax({
                 url: '{{ route('cart.add') }}',
                 type: 'POST',
                 data: {
                     price_id: priceId,
-                    quantity: 1,
+                    quantity: quantity,
                     _token: '{{ csrf_token() }}'
                 },
                 success: function(response) {
                     var cartCount = $('#cart-count');
-                    var cartBadge = $('#cart-badge');
-                    cartCount.text(parseInt(cartCount.text()) + 1); // Update count in the DOM
+                    var currentCount = parseInt(cartCount.text());
+                    cartCount.text(currentCount + quantity); // Update the cart count based on the quantity added
 
+                    var cartBadge = $('#cart-badge');
+                    cartBadge.text('+' + quantity); // Optionally update the badge to show how many were added
                     cartBadge.show().fadeOut(1000); // Show badge and fade out
+                },
+                error: function(xhr) {
+                    alert('Error adding product to cart.');
                 }
-                // error: function(xhr) {
-                //     alert('Error adding product to cart.');
-                // }
             });
         });
+
+        // Optional: Call getCartCount on page load to ensure count is correct
+        getCartCount();
     });
+
+    function getCartCount() {
+        $.ajax({
+            url: '{{ url("api/cart/count") }}', // Make sure this URL is correct and the route is defined in your Laravel routes
+            method: 'GET',
+            success: function(response) {
+                $('#cart-count').text(response.cart_count);
+            }
+        });
+    }
+
 </script>

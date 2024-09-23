@@ -22,6 +22,9 @@ class StripeController extends Controller
 
         $session = $stripe->checkout->sessions->create([
             'payment_method_types' => ['card'],
+            'shipping_address_collection' => [
+                'allowed_countries' => ['US', 'CA'], // Modify as per your requirement
+            ],
             'line_items' => $lineItems->toArray(),
             'mode' => 'payment',
             'success_url' => route('checkout.success'),

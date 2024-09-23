@@ -23,6 +23,7 @@ class CartController extends Controller
                 'price' => $price->unit_amount / 100,
                 'currency' => strtoupper($price->currency),
                 'image' => $price->product->images[0] ?? null,
+                'quantity' => $item->quantity
             ]);
         }
 
@@ -54,6 +55,23 @@ class CartController extends Controller
         return response()->json(['success' => true, 'message' => 'Item added to cart']);
     }
 
+    public function update(Request $request, $id)
+    {
+        $cartItem = Cart::findOrFail($id);
+        $originalQuantity = $cartItem->quantity;
+        $newQuantity = $request->quantity;
+
+        $cartItem->update(['quantity' => $newQuantity]);
+
+        // Update session cart count
+        $currentCount = session('cart_count', 0);
+        $currentCount = $currentCount - $originalQuantity + $newQuantity;
+        session(['cart_count' => $currentCount]);
+
+        return redirect()->route('cart.index')->with('success', 'Cart updated successfully.');
+    }
+
+
     // Remove item from cart
     public function removeFromCart($id)
     {
@@ -63,5 +81,10 @@ class CartController extends Controller
         $cartItem->delete();
 
         return redirect()->back()->with('success', 'Item removed from cart!');
+    }
+
+    public function getCartCount()
+    {
+        return response()->json(['cart_count' => session('cart_count', 0)]);
     }
 }

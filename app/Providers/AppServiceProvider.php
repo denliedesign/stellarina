@@ -20,7 +20,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         view()->composer('*', function ($view) {
-            $view->with('cartCount', session('cart_count', 0));
+//            $view->with('cartCount', session('cart_count', 0));
+            $cartCount = session('cart_count', 0);
+            $view->with('cartCount', $cartCount);
         });
     }
 }

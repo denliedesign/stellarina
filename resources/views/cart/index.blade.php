@@ -13,10 +13,19 @@
                     <h5 class="">{{ $product['name'] }}</h5>
                     <p class="d-none d-md-block">{{ $product['description'] }}</p>
                     <p class="">${{ $product['price'] }} {{ $product['currency'] }}</p>
+                    <form action="{{ route('cart.update', $product['cart_id']) }}" method="POST">
+                        @csrf
+                        @method('PATCH')
+                        <div class="form-group">
+                            <label for="quantity-{{ $product['cart_id'] }}"><p><small>Quantity:</small></p></label>
+                            <input type="number" id="quantity-{{ $product['cart_id'] }}" name="quantity" value="{{ $product['quantity'] }}" min="1" class="d-inline form-control" style="width: auto;">
+                            <button type="submit" class="btn btn-outline-secondary d-inline">Update</button>
+                        </div>
+                    </form>
                     <form action="{{ route('cart.remove', $product['cart_id']) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-secondary">Remove</button>
+                        <button type="submit" class="btn btn-secondary shadow">Remove</button>
                     </form>
                 </div>
             </div>
@@ -36,3 +45,25 @@
         <a href="/" class="btn btn-lg btn-outline-secondary mx-2">Back</a>
     </div>
 @endsection
+
+<script>
+    $(document).ready(function() {
+        $('form').submit(function(event) {
+            event.preventDefault(); // Stop the form from submitting normally
+            var form = $(this);
+
+            $.ajax({
+                url: form.attr('action'),
+                method: form.attr('method'),
+                data: form.serialize(),
+                success: function(response) {
+                    alert('Cart updated successfully!');
+                    // Optionally update the page dynamically here
+                },
+                error: function() {
+                    alert('Failed to update the cart.');
+                }
+            });
+        });
+    });
+</script>
