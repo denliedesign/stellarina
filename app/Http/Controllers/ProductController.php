@@ -11,9 +11,9 @@ class ProductController extends Controller
         $stripe = new StripeClient(env('STRIPE_SECRET'));
 
         // Specific price IDs for featured products
-        $bookOnePriceId = 'price_1Pyn3wP1afA893GfEtWfcsSl';
-        $bookTwoPriceId = 'price_1PzKX3P1afA893Gf7K6VAiDm';
-        $bookThreePriceId = 'price_1PzhVmP1afA893Gf4mlcT0Ar';
+        $bookOnePriceId = 'price_1Q2g7wP1afA893GfaNHVxLF7';
+        $bookTwoPriceId = 'price_1Q2g80P1afA893GfNwNaZ3FU';
+        $bookThreePriceId = 'price_1Q2g84P1afA893Gf4Moumuru';
 
         $bookOne = $this->fetchProductDetails($stripe, $bookOnePriceId);
         $bookTwo = $this->fetchProductDetails($stripe, $bookTwoPriceId);
