@@ -6,7 +6,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta property="og:title" content="Stellarina">
         <meta property="og:description" content="Official site for the Stellarina book series, the golden retriever who loves to dance!">
-        <meta property="og:image" content="https://mystellarina.com/images/meet-the-dogs.jpg">
+        <meta property="og:image" content="https://mystellarina.com/images/meet-the-dogs-sm.jpg">
         <meta property="og:url" content="https://mystellarina.com/">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="description" content="@yield('description', 'Official site for the Stellarina book series, the golden retriever who loves to dance!')">
