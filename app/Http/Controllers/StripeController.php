@@ -29,6 +29,7 @@ class StripeController extends Controller
             'mode' => 'payment',
             'success_url' => route('checkout.success'),
             'cancel_url' => route('checkout.cancel'),
+            'automatic_tax' => ['enabled' => true],
         ]);
 
         return redirect($session->url);
