@@ -35,9 +35,13 @@ class StripeController extends Controller
         return redirect($session->url);
     }
 
-    public function success()
+    public function success(Request $request)
     {
+        $sessionId = $request->session()->getId();
+        Cart::where('session_id', $sessionId)->delete();
         // Logic to execute after successful checkout
+        session()->forget('cartItems');
+        $request->session()->put('cart_count', 0);
         return view('checkout.success');
     }
 
