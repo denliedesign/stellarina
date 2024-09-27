@@ -30,6 +30,7 @@ class StripeController extends Controller
             'success_url' => route('checkout.success'),
             'cancel_url' => route('checkout.cancel'),
             'automatic_tax' => ['enabled' => true],
+            'allow_promotion_codes' => true,
         ]);
 
         return redirect($session->url);
