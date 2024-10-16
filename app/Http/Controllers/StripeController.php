@@ -9,6 +9,7 @@ class StripeController extends Controller
 {
     public function createSession(Request $request)
     {
+        $shippingCost = 495;
         $stripe = new StripeClient(env('STRIPE_SECRET'));
         $sessionId = $request->session()->getId();
         $cartItems = Cart::where('session_id', $sessionId)->get();
@@ -19,6 +20,17 @@ class StripeController extends Controller
                 'quantity' => $item->quantity
             ];
         });
+
+        $lineItems->push([
+            'price_data' => [
+                'currency' => 'usd',
+                'product_data' => [
+                    'name' => 'Shipping',
+                ],
+                'unit_amount' => $shippingCost,
+            ],
+            'quantity' => 1,
+        ]);
 
         $session = $stripe->checkout->sessions->create([
             'payment_method_types' => ['card'],
