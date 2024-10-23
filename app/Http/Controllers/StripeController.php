@@ -77,7 +77,7 @@ class StripeController extends Controller
         if (empty($sessionDetails->line_items) || empty($sessionDetails->line_items->data)) {
             Log::error('Line items are missing from the session details.');
         } else {
-            \Mail::to('kris.mistysdance@gmail.com')->send(new MerchantNotificationMail($sessionDetails));
+            \Mail::to('customdenlie@gmail.com')->send(new MerchantNotificationMail($sessionDetails));
         }
     }
 
