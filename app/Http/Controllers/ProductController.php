@@ -8,7 +8,9 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $stripe = new StripeClient(env('STRIPE_SECRET'));
+        $stripe = new \Stripe\StripeClient(
+            config('services.stripe.secret')
+        );
 
         // Specific price IDs for featured products
         $bookOnePriceId = 'price_1Q2g7wP1afA893GfaNHVxLF7';
