@@ -9,7 +9,9 @@ class CartController extends Controller
 {
     public function index(Request $request)
     {
-        $stripe = new StripeClient(env('STRIPE_SECRET'));
+        $stripe = new \Stripe\StripeClient(
+            config('services.stripe.secret')
+        );
         $sessionId = $request->session()->getId();
         $cartItems = Cart::where('session_id', $sessionId)->get();
 

@@ -14,7 +14,10 @@ class StripeController extends Controller
     public function createSession(Request $request)
     {
         $shippingCost = 495;
-        $this->stripe = new StripeClient(env('STRIPE_SECRET'));
+        $this->stripe = new \Stripe\StripeClient(
+            config('services.stripe.secret')
+        );
+
         $sessionId = $request->session()->getId();
         $cartItems = Cart::where('session_id', $sessionId)->get();
 
